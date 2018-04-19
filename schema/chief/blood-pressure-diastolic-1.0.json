@@ -1,0 +1,55 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "id": "http://datamanagement.mybluemix.net/schema/chief/blood-pressure-diastolic-1.0.json",
+    "type": "object",
+    "description": "This schema represents a person's diastolic blood pressure.",
+    "references": [
+        {
+            "description": "The SNOMED code represents diastolic blood pressure (observable entity)",
+            "url": "http://purl.bioontology.org/ontology/SNOMEDCT/271650006"
+        }
+    ],
+    "definitions": {
+        "quantity_sample": {
+            "$ref": "chief-quantity-sample-1.0.json"
+        },
+        "quantity": {
+            "$ref": "quantity-1.0.json"
+        }
+    },
+    "allOf": [
+        {
+            "$ref": "#/definitions/quantity_sample"
+        },
+        {
+            "properties": {
+                "quantity": {
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/quantity"
+                        },
+                        {
+                            "properties": {
+                                "unit": {
+                                    "enum": [
+                                        "mmHg"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "quantity_type": {
+                    "type": "string",
+                    "enum": [
+                        "bloodPressureDiastolic"
+                    ]
+                }
+            }
+        }
+    ],
+    "required": [
+        "quantity",
+        "quantity_type"
+    ]
+}

@@ -1,0 +1,57 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "id": "http://datamanagement.mybluemix.net/schema/chief/chief-category-sample-1.0.json",
+    "description": "A category sample, describing categorical values.",
+    "type": "object",
+    "references": [
+        {
+            "description": "The class reference for Apple HealthKit HKCategorySample.",
+            "url": "https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKCategorySample_Class/index.html"
+        }
+    ],
+    "definitions": {
+        "time_frame": {
+            "$ref": "time-frame-1.0.json"
+        },
+        "hk_category_type": {
+            "$ref": "hk-category-type-1.0.json"
+        },
+        "chief_metadata_item": {
+            "$ref": "chief-metadata-item-1.0.json"
+        },
+        "hk_metadata_item": {
+            "$ref": "hk-metadata-item-1.0.json"
+        }
+    },
+    "properties": {
+        "effective_time_frame": {
+            "description": "The time frame when this sample occurred. When the HKSample `startDate` and `endDate` values are different, we recommend using the `time_interval` time frame property, and when they are the same, we recommend using the `date_time` time frame property.",
+            "$ref": "#/definitions/time_frame"
+        },
+        "category_value": {
+            "description": "The category value for this sample.",
+            "type": "string"
+        },
+        "category_type": {
+            "description": "The category type for this sample.",
+            "$ref": "#/definitions/hk_category_type"
+        },
+        "metadata": {
+            "description": "An array of extra information describing this sample.",
+            "type": "object",
+            "allOf": [
+                {
+                    "$ref": "#/definitions/chief_metadata_item"
+                },
+                {
+                    "$ref": "#/definitions/hk_metadata_item"
+                }
+            ]
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "category_value",
+        "category_type"
+    ]
+}

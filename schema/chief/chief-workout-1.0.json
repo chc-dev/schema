@@ -1,0 +1,259 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "id": "http://datamanagement.mybluemix.net/schema/chief/chief-workout-1.0.json",
+    "description": "A workout sample that represents a workout or episode of physical activity. This schema does not capture links created using the `addSamples` method of HKWorkout.",
+    "type": "object",
+    "references": [
+        {
+            "description": "The class reference for Apple HealthKit HKWorkout.",
+            "url": "https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKWorkout_Class/index.html"
+        }
+    ],
+    "definitions": {
+        "hk_activity_type": {
+            "$ref": "hk-workout-activity-type-1.0.json"
+        },
+        "chief_activity_type": {
+            "$ref": "chief-workout-activity-type-1.0.json"
+        },
+        "time_frame": {
+            "$ref": "time-frame-1.0.json"
+        },
+        "duration_unit_value": {
+            "$ref": "quantity-duration-1.0.json"
+        },
+        "energy_unit_value": {
+            "$ref": "quantity-energy-1.0.json"
+        },
+        "length_unit_value": {
+            "$ref": "quantity-length-1.0.json"
+        },
+        "chief_metadata_item": {
+            "$ref": "chief-metadata-item-1.0.json"
+        },
+        "hk_metadata_item": {
+            "$ref": "hk-metadata-item-1.0.json"
+        }
+    },
+    "properties": {
+        "activity_type": {
+            "description": "This should correspond to the constant for the desired type of activity, e.g. cycling, not the integer value associated with that constant",
+            "anyOf": [
+                {
+                    "$ref": "#/definitions/hk_activity_type"
+                },
+                {
+                    "$ref": "#/definitions/chief_activity_type"
+                }
+            ]
+        },
+        "effective_time_frame": {
+            "description": "The time frame when this sample occurred. When the HKSample `startDate` and `endDate` values are different, we recommend using the `time_interval` time frame property, and when they are the same, we recommend using the `date_time` time frame property.",
+            "$ref": "#/definitions/time_frame"
+        },
+        "duration": {
+            "description": "The duration of the workout.",
+            "allOf": [
+                {
+                    "$ref": "#/definitions/duration_unit_value"
+                },
+                {
+                    "properties": {
+                        "unit": {
+                            "enum": [
+                                "sec"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "energy_burned": {
+            "description": "The number of calories burned in the workout.",
+            "$ref": "#/definitions/energy_unit_value"
+        },
+        "distance": {
+            "description": "The distance covered, if applicable.",
+            "$ref": "#/definitions/length_unit_value"
+        },
+        "metadata": {
+            "type": "object",
+            "allOf": [
+                {
+                    "$ref": "#/definitions/chief_metadata_item"
+                },
+                {
+                    "$ref": "#/definitions/hk_metadata_item"
+                },
+                {
+                    "properties": {
+                        "activities": {
+                            "description": "activity 活動記錄 (手錶)",
+                            "type": "array",
+                            "items": {
+                                "$ref": "activity-record-1.0.json"
+                            }
+                        },
+                        "isRace": {
+                            "description": "?",
+                            "type": "boolean"
+                        },
+                        "elevationCompleted": {
+                            "description": "?",
+                            "type": "number"
+                        },
+                        "elevationStatusCode": {
+                            "description": "?",
+                            "type": "number"
+                        },
+                        "location": {
+                            "description": "?",
+                            "type": "string"
+                        },
+                        "slope": {
+                            "description": "?",
+                            "type": "number"
+                        },
+                        "slopeWork": {
+                            "description": "?",
+                            "type": "number"
+                        },
+                        "stability": {
+                            "properties": {
+                                "METRIC": {
+                                    "description": "METRIC?",
+                                    "properties": {
+                                        "stabilityIndex": {
+                                            "description": "?",
+                                            "type": "number"
+                                        },
+                                        "avgStability": {
+                                            "description": "?",
+                                            "type": "number"
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "lapStatsData": {
+                            "description": "?",
+                            "type": "array"
+                        },
+                        "comments": {
+                            "description": "?",
+                            "type": "array"
+                        },
+                        "stats": {
+                            "description": "統計資料?",
+                            "properties": {
+                                "duration": {
+                                    "description": "?",
+                                    "type": "number"
+                                },
+                                "distance": {
+                                    "description": "?",
+                                    "type": "number"
+                                },
+                                "maxHeartbeats": {
+                                    "description": "?",
+                                    "type": "number"
+                                },
+                                "avgHeartbeats": {
+                                    "description": "?",
+                                    "type": "number"
+                                },
+                                "avgPressure": {
+                                    "description": "?",
+                                    "type": "number"
+                                },
+                                "avgTemperature": {
+                                    "description": "?",
+                                    "type": "number"
+                                },
+                                "totalClimb": {
+                                    "description": "?",
+                                    "type": "number"
+                                },
+                                "filterTotalDistance": {
+                                    "description": "?",
+                                    "anyOf": [
+                                        {
+                                            "type": "string"
+                                        },
+                                        {
+                                            "type": "null"
+                                        }
+                                    ]
+                                },
+                                "highStepCadence": {
+                                    "description": "?",
+                                    "type": "number"
+                                },
+                                "avgStepCadence": {
+                                    "description": "?",
+                                    "type": "number"
+                                },
+                                "maxPace": {
+                                    "description": "?",
+                                    "type": "number"
+                                },
+                                "avgPace": {
+                                    "description": "?",
+                                    "type": "number"
+                                },
+                                "maxElevation": {
+                                    "description": "?",
+                                    "type": "number"
+                                },
+                                "avgElevation": {
+                                    "description": "?",
+                                    "type": "number"
+                                },
+                                "avgBikeCadence": {
+                                    "description": "?",
+                                    "type": "number"
+                                },
+                                "avgBikeSpeed": {
+                                    "description": "?",
+                                    "type": "number"
+                                },
+                                "maxSpeed": {
+                                    "description": "?",
+                                    "type": "number"
+                                },
+                                "avgSpeed": {
+                                    "description": "?",
+                                    "type": "number"
+                                },
+                                "swimStats": {
+                                    "description": "?",
+                                    "anyOf": [
+                                        {
+                                            "type": "string"
+                                        },
+                                        {
+                                            "type": "null"
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        "visibility": {
+                            "description": "?",
+                            "type": "number"
+                        },
+                        "typeID": {
+                            "description": "?",
+                            "type": "number"
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "effective_time_frame",
+        "activity_type"
+    ]
+}

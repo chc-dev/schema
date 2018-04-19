@@ -1,0 +1,46 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "id": "http://datamanagement.mybluemix.net/schema/chief/cycling-cadence-1.0.json",
+    "description": "This schema represents cadence of cycling.",
+    "type": "object",
+    "definitions": {
+        "quantity_sample": {
+            "$ref": "chief-quantity-sample-1.0.json"
+        },
+        "quantity": {
+            "$ref": "quantity-1.0.json"
+        }
+    },
+    "allOf": [
+        {
+            "$ref": "#/definitions/quantity_sample"
+        },
+        {
+            "properties": {
+                "quantity": {
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/quantity"
+                        },
+                        {
+                            "unit": {
+                                "enum": [
+                                    "count/min"
+                                ]
+                            }
+                        }
+                    ]
+                },
+                "quantity_type": {
+                    "enum": [
+                        "cyclingCadence"
+                    ]
+                }
+            }
+        }
+    ],
+    "required": [
+        "quantity",
+        "quantity_type"
+    ]
+}

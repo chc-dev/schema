@@ -1,0 +1,26 @@
+{
+    "header": {
+        "schema_id": {
+            "namespace": "chief",
+            "name": "body-mass",
+            "version": "1.0"
+        }
+    },
+    "body": [
+        {
+            "quantity": {
+                "unit": "m",
+                "value": 65
+            },
+            "quantity_type": "bodyMass",
+            "effective_time_frame": {
+                "date_time": "2018-04-05T07:25:00Z"
+            },
+            "metadata": {
+                "src_vendor": "GOLiFE",
+                "modality": "sensed",
+                "mood": "awesome"
+            }
+        }
+    ]
+}

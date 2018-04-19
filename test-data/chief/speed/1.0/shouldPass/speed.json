@@ -1,0 +1,14 @@
+{
+    "quantity": {
+        "unit": "km/h",
+        "value": 7
+    },
+    "quantity_type": "speed",
+    "effective_time_frame": {
+        "date_time": "2018-04-05T07:25:00Z"
+    },
+    "metadata": {
+        "src_vendor": "GOLiFE",
+        "modality": "sensed"
+    }
+}

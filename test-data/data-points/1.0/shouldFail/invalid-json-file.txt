@@ -1,0 +1,20 @@
+{
+    "header": "creation_date_time": "2013-02-05T07:25:00Z",
+    "schema_id": {
+        "namespace": "chief",
+        "name": "heart-rate",
+        "version": "1.0"
+    },
+    "acquisition_provenance": {
+        "source_name": "GOLiFE",
+        "modality": "sensed"
+    },
+    "body": "unit_value": {
+        "value": 60,
+        "unit": "meter"
+    },
+    "quantity_type": "HKQuantityTypeIdentifierHeartRate",
+    "effective_time_frame": {
+        "date_time": "2013-02-05T07:25:00Z"
+    }
+}

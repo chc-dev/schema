@@ -1,0 +1,16 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "id": "http://datamanagement.mybluemix.net/schema/chief/chief-workout-activity-type-1.0.json",
+    "type": "string",
+    "description": "The name(s) of the physical activity(ies) in which the person is engaged. It is recommended that the activity name be drawn from the CDC guidelines to facilitate mapping to standard energy expenditure values (METs)",
+    "references": [
+        {
+            "description": "The HealthKit constants reference, which represents workout activity type ",
+            "url": "https://developer.apple.com/documentation/healthkit/hkworkoutactivitytype"
+        }
+    ],
+    "enum": [
+        "multiSports",
+        "triathlon"
+    ]
+}

@@ -1,0 +1,16 @@
+{
+    "quantity": {
+        "value": 78
+    },
+    "quantity_type": "stepCount",
+    "effective_time_frame": {
+        "time_interval": {
+            "start_date_time": "2018-04-05T00:00:00Z",
+            "end_date_time": "2018-04-06T00:00:00Z"
+        }
+    },
+    "metadata": {
+        "src_vendor": "GOLiFE",
+        "modality": "sensed"
+    }
+}

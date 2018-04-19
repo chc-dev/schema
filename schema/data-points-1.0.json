@@ -1,0 +1,48 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "id": "http://datamanagement.mybluemix.net/schema/data-points-1.0.json",
+    "type": "object",
+    "description": "This schema represents a data point.",
+    "definitions": {
+        "header": {
+            "$ref": "header-1.0.json"
+        },
+        "time_frame": {
+            "$ref": "chief/time-frame-1.0.json"
+        },
+        "data_body": {
+            "type": "object",
+            "description": "The body of the data point. This object should conform to the schema identifier in the header property.",
+            "properties": {
+                "effective_time_frame": {
+                    "description": "The time frame when this data_point occurred. When the HKSample `startDate` and `endDate` values are different, we recommend using the `time_interval` time frame property, and when they are the same, we recommend using the `date_time` time frame property.",
+                    "$ref": "#/definitions/time_frame"
+                }
+            },
+            "required": [
+                "effective_time_frame"
+            ]
+        }
+    },
+    "properties": {
+        "header": {
+            "description": "The header of the data point.",
+            "$ref": "#/definitions/header"
+        },
+        "body": {
+            "anyOf": [
+                {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/data_body"
+                    },
+                    "minItems": 1
+                }
+            ]
+        }
+    },
+    "required": [
+        "header",
+        "body"
+    ]
+}

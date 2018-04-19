@@ -1,0 +1,34 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "id": "http://datamanagement.mybluemix.net/schema/chief/quantity-speed-1.0.json",
+    "description": "This schema represents a speed (distance over time).",
+    "type": "object",
+    "references": [
+        {
+            "description": "The SNOMED code represents Velocity (property) (qualifier value)",
+            "url": "http://purl.bioontology.org/ontology/SNOMEDCT/118592000"
+        }
+    ],
+    "allOf": [
+        {
+            "$ref": "quantity-1.0.json"
+        },
+        {
+            "properties": {
+                "unit": {
+                    "references": [
+                        {
+                            "description": "The unit of measure of the element. Basic units are meter and second.",
+                            "url": "http://unitsofmeasure.org/ucum.html#section-Base-Units"
+                        }
+                    ],
+                    "default": "km/h",
+                    "enum": [
+                        "m/s",
+                        "km/h"
+                    ]
+                }
+            }
+        }
+    ]
+}

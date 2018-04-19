@@ -1,0 +1,36 @@
+{
+    "id": "http://datamanagement.mybluemix.net/schema/chief/header-1.0.json",
+    "type": "object",
+    "definitions": {
+        "schema_id": {
+            "type": "object",
+            "properties": {
+                "namespace": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "version": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "namespace",
+                "name",
+                "version"
+            ]
+        }
+    },
+    "properties": {
+        "creation_date_time": {
+            "type": "string"
+        },
+        "schema_id": {
+            "$ref": "#/definitions/schema_id"
+        }
+    },
+    "required": [
+        "schema_id"
+    ]
+}

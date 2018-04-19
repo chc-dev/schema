@@ -1,0 +1,57 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "id": "http://datamanagement.mybluemix.net/schema/chief/heart-rate-1.0.json",
+    "description": "This schema represents a person's heart rate, either a single heart rate measurement, or the result of aggregating several measurements made over time (see Numeric descriptor schema for a list of aggregate measures)",
+    "type": "object",
+    "references": [
+        {
+            "description": "The SNOMED code represents Pulse rate (observable entity)",
+            "url": "http://purl.bioontology.org/ontology/SNOMEDCT/78564009"
+        }
+    ],
+    "definitions": {
+        "quantity_sample": {
+            "$ref": "chief-quantity-sample-1.0.json"
+        },
+        "quantity": {
+            "$ref": "quantity-1.0.json"
+        }
+    },
+    "allOf": [
+        {
+            "$ref": "#/definitions/quantity_sample"
+        },
+        {
+            "properties": {
+                "quantity": {
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/quantity"
+                        },
+                        {
+                            "properties": {
+                                "unit": {
+                                    "enum": [
+                                        "beats/min"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "quantity_type": {
+                    "enum": [
+                        "heartRate",
+                        "heartRateVariabilitySDNN",
+                        "restingHeartRate",
+                        "walkingHeartRateAverage"
+                    ]
+                }
+            }
+        }
+    ],
+    "required": [
+        "quantity",
+        "quantity_type"
+    ]
+}

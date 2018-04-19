@@ -1,0 +1,12 @@
+{
+	"header": {
+		"schema_id": {
+			"namespace": "chief",
+			"name": "heart-rate",
+			"version": "1.0"
+		}
+	},
+	"body": [
+		{}
+	]
+}

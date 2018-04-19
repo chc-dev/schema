@@ -1,0 +1,15 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "id": "http://datamanagement.mybluemix.net/schema/chief/chief-correlation-type-1.0.json",
+    "type": "string",
+    "description": "The constants for the types of Correlation data as defined by Chief Cloud",
+    "references": [
+        {
+            "value": "activityRecord",
+            "description": "Activity record correlation types combine any number of samples and geoposition measured in the same moment."
+        }
+    ],
+    "enum": [
+        "activityRecord"
+    ]
+}

@@ -1,0 +1,39 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "id": "http://datamanagement.mybluemix.net/schema/chief/chief-metadata-item-1.0.json",
+    "type": "object",
+    "description": "裝置廠商的通用其他額外資訊",
+    "definitions": {
+        "geoposition": {
+            "$ref": "geoposition-1.0.json"
+        }
+    },
+    "properties": {
+        "src_vendor": {
+            "description": "src_vendor裝置廠商",
+            "type": "string"
+        },
+        "geoposition": {
+            "$ref": "geoposition-1.0.json"
+        },
+        "modality": {
+            "description": "The modality whereby the measure is obtained.",
+            "type": "string",
+            "enum": [
+                "sensed",
+                "self-reported"
+            ]
+        },
+        "mood": {
+            "description": "使用者選取心情",
+            "type": "string",
+            "enum": [
+                "awesome",
+                "great",
+                "okay",
+                "notsogood",
+                "bad"
+            ]
+        }
+    }
+}

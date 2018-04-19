@@ -1,0 +1,167 @@
+{
+    "energy_burned": {
+        "unit": "kcal",
+        "value": 908
+    },
+    "distance": {
+        "unit": "m",
+        "value": 40439.933307984
+    },
+    "duration": {
+        "unit": "sec",
+        "value": 8777
+    },
+    "activity_type": "triathlon",
+    "effective_time_frame": {
+        "time_interval": {
+            "start_date_time": "2018-04-05T07:25:00Z",
+            "end_date_time": "2018-04-05T09:25:00Z"
+        }
+    },
+    "metadata": {
+        "src_vendor": "GOLiFE",
+        "modality": "sensed",
+        "HKMetadataKeyWeatherCondition": "cloudy",
+        "HKMetadataKeyWeatherTemperature": 25,
+        "HKMetadataKeyWeatherHumidity": 70,
+        "HKMetadataKeyMaximumSpeed": 40,
+        "HKMetadataKeyIndoorWorkout": false,
+        "isRace": false,
+        "elevationCompleted": 1,
+        "elevationStatusCode": 1,
+        "location": "",
+        "slope": 9,
+        "slopeWork": 30645.30078125,
+        "stability": {
+            "METRIC": {
+                "stabilityIndex": 0.12195,
+                "avgStability": 3.46
+            }
+        },
+        "lapStatsData": [],
+        "comments": [],
+        "stats": {
+            "id": 985670,
+            "duration": 8777,
+            "distance": 40439.933307984,
+            "maxHeartbeats": 158,
+            "avgHeartbeats": 123.15000152588,
+            "avgPressure": 0,
+            "avgTemperature": 0,
+            "totalClimb": 0,
+            "filterTotalDistance": null,
+            "highStepCadence": 0,
+            "avgStepCadence": 0,
+            "maxPace": 74.529998779297,
+            "avgPace": 217.03999328613,
+            "maxElevation": 125.30999755859,
+            "avgElevation": 33.340000152588,
+            "avgBikeCadence": 0,
+            "avgBikeSpeed": 0,
+            "maxSpeed": 48.299999237061,
+            "avgSpeed": 16.590000152588,
+            "swimStats": null
+        },
+        "visibility": 0,
+        "typeID": 2,
+        "activities": [
+            {
+                "quantity_samples": [
+                    {
+                        "quantity": {
+                            "value": 90,
+                            "unit": "beats/min"
+                        },
+                        "quantity_type": "heartRate"
+                    },
+                    {
+                        "quantity": {
+                            "value": 90,
+                            "unit": "km/h"
+                        },
+                        "quantity_type": "speed"
+                    },
+                    {
+                        "quantity": {
+                            "value": 90,
+                            "unit": "count/min"
+                        },
+                        "quantity_type": "cyclingCadence"
+                    }
+                ],
+                "correlation_type": "activityRecord",
+                "metadata": {
+                    "geoposition": {
+                        "x": {
+                            "unit": "deg",
+                            "value": 120
+                        },
+                        "y": {
+                            "unit": "deg",
+                            "value": 120
+                        },
+                        "z": {
+                            "unit": "m",
+                            "value": 120
+                        }
+                    },
+                    "valid": 0,
+                    "flag": 0,
+                    "event": "Running",
+                    "accumulatedDistance": 100,
+                    "accumulatedDuration": 200,
+                    "accumulatedStep": 30,
+                    "accumulatedLap": 5
+                }
+            },
+            {
+                "quantity_samples": [
+                    {
+                        "quantity": {
+                            "value": 90,
+                            "unit": "beats/min"
+                        },
+                        "quantity_type": "heartRate"
+                    },
+                    {
+                        "quantity": {
+                            "value": 90,
+                            "unit": "km/h"
+                        },
+                        "quantity_type": "speed"
+                    },
+                    {
+                        "quantity": {
+                            "value": 90,
+                            "unit": "count/min"
+                        },
+                        "quantity_type": "cyclingCadence"
+                    }
+                ],
+                "correlation_type": "activityRecord",
+                "metadata": {
+                    "geoposition": {
+                        "x": {
+                            "unit": "deg",
+                            "value": 120
+                        },
+                        "y": {
+                            "unit": "deg",
+                            "value": 120
+                        },
+                        "z": {
+                            "unit": "m",
+                            "value": 120
+                        }
+                    },
+                    "valid": 0,
+                    "flag": 0,
+                    "event": "Running",
+                    "accumulatedDistance": 100,
+                    "accumulatedDuration": 200,
+                    "accumulatedStep": 30
+                }
+            }
+        ]
+    }
+}

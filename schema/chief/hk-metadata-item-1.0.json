@@ -1,0 +1,143 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "id": "http://datamanagement.mybluemix.net/schema/chief/hk-metadata-item-1.0.json",
+    "type": "object",
+    "description": "An key-value pair that represent Apple HealthKit metadata information.",
+    "references": [
+        {
+            "description": "A general description of metadata in HealthKit.",
+            "url": "https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKObject_Class/index.html#//apple_ref/occ/instp/HKObject/metadata"
+        }
+    ],
+    "definitions": {
+        "metadata": {
+            "oneOf": [
+                {
+                    "type": "string"
+                },
+                {
+                    "type": "number"
+                },
+                {
+                    "type": "boolean"
+                }
+            ]
+        }
+    },
+    "properties": {
+        "HKMetadataKeyAlpineSlopeGrade": {
+            "$ref": "#/definitions/metadata"
+        },
+        "HKMetadataKeyAverageSpeed": {
+            "$ref": "#/definitions/metadata"
+        },
+        "HKMetadataKeyBloodGlucoseMealTime": {
+            "$ref": "#/definitions/metadata"
+        },
+        "HKMetadataKeyElevationAscended": {
+            "$ref": "#/definitions/metadata"
+        },
+        "HKMetadataKeyElevationDescended": {
+            "$ref": "#/definitions/metadata"
+        },
+        "HKMetadataKeyInsulinDeliveryReason": {
+            "$ref": "#/definitions/metadata"
+        },
+        "HKMetadataKeyMaximumSpeed": {
+            "$ref": "#/definitions/metadata"
+        },
+        "HKMetadataKeySyncIdentifier": {
+            "$ref": "#/definitions/metadata"
+        },
+        "HKMetadataKeySyncVersion": {
+            "$ref": "#/definitions/metadata"
+        },
+        "HKMetadataKeyVO2MaxTestType": {
+            "$ref": "#/definitions/metadata"
+        },
+        "HKMetadataKeyLapLength": {
+            "$ref": "#/definitions/metadata"
+        },
+        "HKMetadataKeySwimmingLocationType": {
+            "$ref": "#/definitions/metadata"
+        },
+        "HKMetadataKeySwimmingStrokeStyle": {
+            "$ref": "#/definitions/metadata"
+        },
+        "HKMetadataKeyDeviceSerialNumber": {
+            "$ref": "#/definitions/metadata"
+        },
+        "HKMetadataKeyBodyTemperatureSensorLocation": {
+            "$ref": "#/definitions/metadata"
+        },
+        "HKMetadataKeyHeartRateSensorLocation": {
+            "$ref": "#/definitions/metadata"
+        },
+        "HKMetadataKeyHeartRateMotionContext": {
+            "$ref": "#/definitions/metadata"
+        },
+        "HKMetadataKeyFoodType": {
+            "$ref": "#/definitions/metadata"
+        },
+        "HKMetadataKeyUDIDeviceIdentifier": {
+            "$ref": "#/definitions/metadata"
+        },
+        "HKMetadataKeyUDIProductionIdentifier": {
+            "$ref": "#/definitions/metadata"
+        },
+        "HKMetadataKeyDigitalSignature": {
+            "$ref": "#/definitions/metadata"
+        },
+        "HKMetadataKeyExternalUUID": {
+            "$ref": "#/definitions/metadata"
+        },
+        "HKMetadataKeyTimeZone": {
+            "$ref": "#/definitions/metadata"
+        },
+        "HKMetadataKeyDeviceName": {
+            "$ref": "#/definitions/metadata"
+        },
+        "HKMetadataKeyDeviceManufacturerName": {
+            "$ref": "#/definitions/metadata"
+        },
+        "HKMetadataKeyWasTakenInLab": {
+            "$ref": "#/definitions/metadata"
+        },
+        "HKMetadataKeyReferenceRangeLowerLimit": {
+            "$ref": "#/definitions/metadata"
+        },
+        "HKMetadataKeyReferenceRangeUpperLimit": {
+            "$ref": "#/definitions/metadata"
+        },
+        "HKMetadataKeyWasUserEntered": {
+            "$ref": "#/definitions/metadata"
+        },
+        "HKMetadataKeyWorkoutBrandName": {
+            "$ref": "#/definitions/metadata"
+        },
+        "HKMetadataKeyGroupFitness": {
+            "$ref": "#/definitions/metadata"
+        },
+        "HKMetadataKeyIndoorWorkout": {
+            "$ref": "#/definitions/metadata"
+        },
+        "HKMetadataKeyCoachedWorkout": {
+            "$ref": "#/definitions/metadata"
+        },
+        "HKMetadataKeyMenstrualCycleStart": {
+            "$ref": "#/definitions/metadata"
+        },
+        "HKMetadataKeySexualActivityProtectionUsed": {
+            "$ref": "#/definitions/metadata"
+        },
+        "HKMetadataKeyWeatherCondition": {
+            "$ref": "#/definitions/metadata"
+        },
+        "HKMetadataKeyWeatherTemperature": {
+            "$ref": "#/definitions/metadata"
+        },
+        "HKMetadataKeyWeatherHumidity": {
+            "$ref": "#/definitions/metadata"
+        }
+    }
+}

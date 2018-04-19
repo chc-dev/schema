@@ -1,0 +1,84 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "id": "http://datamanagement.mybluemix.net/schema/chief/blood-pressure-1.0.json",
+    "description": "This schema represents a person's blood pressure as a combination of systolic and diastolic blood pressure.",
+    "type": "object",
+    "references": [
+        {
+            "description": "The SNOMED codes represents Blood pressure (observable entity)",
+            "url": "http://purl.bioontology.org/ontology/SNOMEDCT/75367002"
+        }
+    ],
+    "definitions": {
+        "correlation": {
+            "$ref": "chief-correlation-1.0.json"
+        },
+        "diastolic_blood_pressure": {
+            "$ref": "blood-pressure-diastolic-1.0.json"
+        },
+        "systolic_blood_pressure": {
+            "$ref": "blood-pressure-systolic-1.0.json"
+        },
+        "chief_metadata_item": {
+            "$ref": "chief-metadata-item-1.0.json"
+        },
+        "hk_metadata_item": {
+            "$ref": "hk-metadata-item-1.0.json"
+        }
+    },
+    "allOf": [
+        {
+            "$ref": "#/definitions/correlation"
+        },
+        {
+            "properties": {
+                "quantity_samples": {
+                    "type": "array",
+                    "items": {
+                        "anyOf": [
+                            {
+                                "$ref": "#/definitions/systolic_blood_pressure"
+                            },
+                            {
+                                "$ref": "#/definitions/diastolic_blood_pressure"
+                            }
+                        ]
+                    }
+                },
+                "correlation_type": {
+                    "type": "string",
+                    "enum": [
+                        "bloodPressure"
+                    ]
+                },
+                "metadata": {
+                    "type": "object",
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/chief_metadata_item"
+                        },
+                        {
+                            "$ref": "#/definitions/hk_metadata_item"
+                        },
+                        {
+                            "properties": {
+                                "ihb": {
+                                    "type": "number",
+                                    "description": "是否心律不整: 0否 1是"
+                                },
+                                "bp_level": {
+                                    "type": "number",
+                                    "description": "健康燈號: 舒張壓:  紅燈(4) : >= 90, 橘燈(3) : >= 85 and < 90, 黃燈(2) : >= 80 and < 85,綠燈(1) : < 80;收縮壓:紅燈(4) : >= 140,橘燈(3) : >= 130 and < 140,黃燈(2) : >= 120 and < 130,綠燈(1) : < 120"
+                                }
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    ],
+    "required": [
+        "quantity_samples",
+        "correlation_type"
+    ]
+}

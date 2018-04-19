@@ -1,0 +1,29 @@
+{
+    "header": {
+        "creation_date_time": "2013-02-05T07:25:00Z",
+        "schema_id": {
+            "namespace": "chief",
+            "name": "heart-rate",
+            "version": "1.0"
+        }
+    },
+    "body": [
+        {
+            "quantity": {
+                "unit": "beats/min",
+                "value": 72
+            },
+            "quantity_type": "heartRate",
+            "effective_time_frame": {
+                "date_time": "2013-02-05T07:25:00Z"
+            },
+            "metadata": {
+                "src_vendor": "GOLiFE",
+                "modality": "sensed",
+                "HKMetadataKeyDeviceSerialNumber": "123456789",
+                "HKMetadataKeyDeviceName": "golife care-x hr",
+                "HKMetadataKeyDeviceManufacturerName": "GOLiFE"
+            }
+        }
+    ]
+}

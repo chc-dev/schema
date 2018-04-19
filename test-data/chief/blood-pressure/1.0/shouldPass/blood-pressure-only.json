@@ -1,0 +1,22 @@
+{
+	"quantity_samples": [
+		{
+			"quantity": {
+				"unit": "mmHg",
+				"value": 90
+			},
+			"quantity_type": "bloodPressureDiastolic"
+		},
+		{
+			"quantity": {
+				"unit": "mmHg",
+				"value": 120
+			},
+			"quantity_type": "bloodPressureSystolic"
+		}
+	],
+	"correlation_type": "bloodPressure",
+	"effective_time_frame": {
+		"date_time": "2018-04-05T07:25:00Z"
+	}
+}

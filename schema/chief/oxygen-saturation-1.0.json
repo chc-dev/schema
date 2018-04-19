@@ -1,0 +1,55 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "id": "http://datamanagement.mybluemix.net/schema/chief/oxygen-saturation-1.0.json",
+    "description": "This schema represents the oxygen saturation.",
+    "type": "object",
+    "references": [
+        {
+            "description": "The SNOMED code represents Hemoglobin saturation with oxygen (observable entity)",
+            "url": "http://purl.bioontology.org/ontology/SNOMEDCT/431314004"
+        }
+    ],
+    "definitions": {
+        "quantity_sample": {
+            "$ref": "chief-quantity-sample-1.0.json"
+        },
+        "quantity": {
+            "$ref": "quantity-1.0.json"
+        }
+    },
+    "allOf": [
+        {
+            "$ref": "#/definitions/quantity_sample"
+        },
+        {
+            "properties": {
+                "quantity": {
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/quantity"
+                        },
+                        {
+                            "properties": {
+                                "unit": {
+                                    "enum": [
+                                        "%"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "quantity_type": {
+                    "enum": [
+                        "oxygenSaturation"
+                    ]
+                }
+            }
+        }
+    ]
+    ,
+    "required": [
+        "quantity",
+        "quantity_type"
+    ]
+}

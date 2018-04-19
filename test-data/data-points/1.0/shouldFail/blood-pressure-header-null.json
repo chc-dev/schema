@@ -1,0 +1,31 @@
+{
+	"header": {},
+	"body": [ {
+		"quantity_samples": [
+			{
+				"quantity": {
+					"unit": "mmHg",
+					"value": 90
+				},
+				"quantity_type": "bloodPressureDiastolic"
+			},
+			{
+				"quantity": {
+					"unit": "mmHg",
+					"value": 120
+				},
+				"quantity_type": "bloodPressureSystolic"
+			}
+		],
+		"correlation_type": "bloodPressure",
+		"effective_time_frame": {
+			"date_time": "2018-04-05T08:25:00Z"
+		},
+		"metadata": {
+			"ihb": 1,
+			"bp_level": 4,
+			"src_vendor": "GOLiFE",
+			"modality": "sensed"
+		}
+	}]
+}

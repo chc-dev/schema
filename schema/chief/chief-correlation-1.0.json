@@ -1,0 +1,95 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "id": "http://datamanagement.mybluemix.net/schema/chief/chief-correlation-1.0.json",
+    "description": "A correlation sample that represents data using multiple quantity and category samples.",
+    "type": "object",
+    "references": [
+        {
+            "description": "The class reference for Apple HealthKit HKCorrelationSample.",
+            "url": "https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKCorrelation_Class/index.html"
+        }
+    ],
+    "definitions": {
+        "time_frame": {
+            "$ref": "time-frame-1.0.json"
+        },
+        "hk_correlation_type": {
+            "$ref": "hk-correlation-type-1.0.json"
+        },
+        "chief_correlation_type": {
+            "$ref": "chief-correlation-type-1.0.json"
+        },
+        "category_sample": {
+            "$ref": "chief-category-sample-1.0.json"
+        },
+        "quantity_sample": {
+            "$ref": "chief-quantity-sample-1.0.json"
+        },
+        "chief_metadata_item": {
+            "$ref": "chief-metadata-item-1.0.json"
+        },
+        "hk_metadata_item": {
+            "$ref": "hk-metadata-item-1.0.json"
+        }
+    },
+    "properties": {
+        "correlation_type": {
+            "description": "The correlation type for this sample.",
+            "anyOf": [
+                {
+                    "$ref": "#/definitions/hk_correlation_type"
+                },
+                {
+                    "$ref": "#/definitions/chief_correlation_type"
+                }
+            ]
+        },
+        "effective_time_frame": {
+            "description": "The time frame when this sample occurred. When the HKSample `startDate` and `endDate` values are different, we recommend using the `time_interval` time frame property, and when they are the same, we recommend using the `date_time` time frame property.",
+            "$ref": "#/definitions/time_frame"
+        },
+        "metadata": {
+            "description": "An array of extra information describing this sample.",
+            "type": "object",
+            "allOf": [
+                {
+                    "$ref": "#/definitions/chief_metadata_item"
+                },
+                {
+                    "$ref": "#/definitions/hk_metadata_item"
+                }
+            ]
+        },
+        "quantity_samples": {
+            "description": "An array of the quantity samples in this correlation.",
+            "type": "array",
+            "minItems": 1,
+            "items": {
+                "$ref": "#/definitions/quantity_sample"
+            }
+        },
+        "category_samples": {
+            "description": "An array of the category samples in this correlation.",
+            "type": "array",
+            "minItems": 1,
+            "items": {
+                "$ref": "#/definitions/category_sample"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "anyOf": [
+        {
+            "required": [
+                "category_samples",
+                "correlation_type"
+            ]
+        },
+        {
+            "required": [
+                "quantity_samples",
+                "correlation_type"
+            ]
+        }
+    ]
+}

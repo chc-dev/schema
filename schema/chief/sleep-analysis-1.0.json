@@ -1,0 +1,71 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "id": "http://datamanagement.mybluemix.net/schema/chief/sleep-analysis-1.0.json",
+    "type": "object",
+    "description": "This schema represents sleep duration.",
+    "references": [
+        {
+            "description": "The SNOMED code represents Duration of sleep (observable entity)",
+            "url": "http://purl.bioontology.org/ontology/SNOMEDCT/248263006"
+        },
+        {
+            "description": "Apple HealthKit sleep analysis",
+            "url": "https://developer.apple.com/documentation/healthkit/hkcategoryvaluesleepanalysis"
+        }
+    ],
+    "definitions": {
+        "category_sample": {
+            "$ref": "chief-category-sample-1.0.json"
+        },
+        "chief_metadata_item": {
+            "$ref": "chief-metadata-item-1.0.json"
+        },
+        "hk_metadata_item": {
+            "$ref": "hk-metadata-item-1.0.json"
+        }
+    },
+    "allOf": [
+        {
+            "$ref": "#/definitions/category_sample"
+        },
+        {
+            "properties": {
+                "category_value": {
+                    "enum": [
+                        "inBed",
+                        "asleep",
+                        "awake"
+                    ]
+                },
+                "category_type": {
+                    "enum": [
+                        "sleepAnalysis"
+                    ]
+                },
+                "metadata": {
+                    "type": "object",
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/chief_metadata_item"
+                        },
+                        {
+                            "$ref": "#/definitions/hk_metadata_item"
+                        },
+                        {
+                            "properties": {
+                                "score": {
+                                    "type": "number",
+                                    "description": " 依擺動次數區分 5 個等級, 擺動數最多者為 5 (表示睡眠品質差), 最少者為 1 (表示睡眠品質好)"
+                                }
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    ],
+    "required": [
+        "category_value",
+        "category_type"
+    ]
+}
