@@ -30,6 +30,11 @@
                     "enum": [
                         "stepCount"
                     ]
+                },
+                "effective_time_frame": {
+                    "required":[
+                        "time_interval"
+                    ]
                 }
             }
         }

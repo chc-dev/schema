@@ -30,6 +30,11 @@
                     "enum": [
                         "lapCount"
                     ]
+                },
+                "effective_time_frame": {
+                    "required":[
+                        "time_interval"
+                    ]
                 }
             }
         }
