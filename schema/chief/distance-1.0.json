@@ -1,14 +1,8 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "id": "https://chc-datapoint.mybluemix.net/schema/chief/step-count-1.0.json",
-    "description": "This schema represents number of steps.",
+    "id": "https://chc-datapoint.mybluemix.net/schema/chief/distance-1.0.json",
+    "description": "This schema represents distance.",
     "type": "object",
-    "references": [
-        {
-            "description": "The LOINC code refers to Number of steps in unspecified time Pedometer",
-            "url": "http://purl.bioontology.org/ontology/LNC/55423-8"
-        }
-    ],
     "allOf": [
         {
             "$ref": "chief-quantity-sample-1.0.json"
@@ -16,11 +10,16 @@
         {
             "properties": {
                 "quantity": {
-                    "$ref": "quantity-1.0.json"
+                    "$ref": "quantity-length-1.0.json"
                 },
                 "quantity_type": {
                     "enum": [
-                        "stepCount"
+                        "distanceCycling",
+                        "distanceDownhillSnowSports",
+                        "distanceSwimming",
+                        "distanceWalkingRunning",
+                        "distanceWheelchair",
+                        "distanceMultiSports"
                     ]
                 },
                 "effective_time_frame": {

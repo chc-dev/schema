@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "id": "http://datamanagement.mybluemix.net/schema/chief/speed-1.0.json",
+    "id": "https://chc-datapoint.mybluemix.net/schema/chief/speed-1.0.json",
     "description": "This schema represents speed measurements (space over time).",
     "type": "object",
     "references": [
@@ -9,22 +9,14 @@
             "url": "https://ncim.nci.nih.gov/ncimbrowser/ConceptReport.jsp?dictionary=NCI%20MetaThesaurus&code=C0678536"
         }
     ],
-    "definitions": {
-        "quantity_sample": {
-            "$ref": "chief-quantity-sample-1.0.json"
-        },
-        "speed_unit_value": {
-            "$ref": "quantity-speed-1.0.json"
-        }
-    },
     "allOf": [
         {
-            "$ref": "#/definitions/quantity_sample"
+            "$ref": "chief-quantity-sample-1.0.json"
         },
         {
             "properties": {
                 "quantity": {
-                      "$ref": "#/definitions/speed_unit_value"
+                    "$ref": "quantity-speed-1.0.json"
                 },
                 "quantity_type": {
                     "enum": [

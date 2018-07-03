@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "id": "http://datamanagement.mybluemix.net/schema/chief/hk-correlation-type-1.0.json",
+    "id": "https://chc-datapoint.mybluemix.net/schema/chief/hk-correlation-type-1.0.json",
     "type": "string",
     "description": "The constants for the types of HKCorrelation data as defined by the Apple HealthKit Framework",
     "references": [

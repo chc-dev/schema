@@ -1,50 +1,14 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "id": "http://datamanagement.mybluemix.net/schema/chief/activity-record-1.0.json",
+    "id": "https://chc-datapoint.mybluemix.net/schema/chief/activity-record-1.0.json",
     "description": "This schema represents a person's activity record as a combination of many measurements.",
     "type": "object",
-    "definitions": {
-        "correlation": {
-            "$ref": "chief-correlation-1.0.json"
-        },
-        "speed": {
-            "$ref": "speed-1.0.json"
-        },
-        "heart_rate": {
-            "$ref": "heart-rate-1.0.json"
-        },
-        "cycling_cadence": {
-            "$ref": "cycling-cadence-1.0.json"
-        },
-        "chief_metadata_item": {
-            "$ref": "chief-metadata-item-1.0.json"
-        },
-        "hk_metadata_item": {
-            "$ref": "hk-metadata-item-1.0.json"
-        }
-    },
     "allOf": [
         {
-            "$ref": "#/definitions/correlation"
+            "$ref": "chief-correlation-1.0.json"
         },
         {
             "properties": {
-                "quantity_samples": {
-                    "type": "array",
-                    "items": {
-                        "anyOf": [
-                            {
-                                "$ref": "#/definitions/speed"
-                            },
-                            {
-                                "$ref": "#/definitions/heart_rate"
-                            },
-                            {
-                                "$ref": "#/definitions/cycling_cadence"
-                            }
-                        ]
-                    }
-                },
                 "correlation_type": {
                     "type": "string",
                     "enum": [
@@ -55,21 +19,13 @@
                     "type": "object",
                     "allOf": [
                         {
-                            "$ref": "#/definitions/chief_metadata_item"
+                            "$ref": "chief-metadata-item-1.0.json"
                         },
                         {
-                            "$ref": "#/definitions/hk_metadata_item"
+                            "$ref": "hk-metadata-item-1.0.json"
                         },
                         {
                             "properties": {
-                                "valid": {
-                                    "description": "點位是否有效 0: invalid, 2: valid",
-                                    "type": "number",
-                                    "enum": [
-                                        0,
-                                        2
-                                    ]
-                                },
                                 "flag": {
                                     "description": "點位狀態 0 : normal, 1 : start after pausing, 8 : start of a lap, 9 : start of the entire activity",
                                     "type": "number",
@@ -84,27 +40,31 @@
                                     "description": "240: Swimming, 241 : Biking, 242: Running, 243: Change zone 1, 244: Change zone 2, 245: Swimming, 246: Biking, 247: Running, 248: Change zone 1, 249: Change zone 2",
                                     "type": "string",
                                     "enum": [
-                                        "Swimming",
-                                        "Biking",
-                                        "Running",
-                                        "Change zone 1",
-                                        "Change zone 2"
+                                        "240",
+                                        "241",
+                                        "243",
+                                        "244",
+                                        "245",
+                                        "246",
+                                        "247",
+                                        "248",
+                                        "249"
                                     ]
                                 },
                                 "accumulatedDistance": {
-                                    "description": "?",
+                                    "description": "累積距離 (單位: 公尺)",
                                     "type": "number"
                                 },
                                 "accumulatedDuration": {
-                                    "description": "?",
+                                    "description": "累積時間 (單位: 秒)",
                                     "type": "number"
                                 },
                                 "accumulatedStep": {
-                                    "description": "?",
+                                    "description": "累積步數",
                                     "type": "number"
                                 },
                                 "accumulatedLap": {
-                                    "description": "?",
+                                    "description": "累積圈數",
                                     "type": "number"
                                 }
                             }

@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "id": "http://datamanagement.mybluemix.net/schema/chief/heart-rate-1.0.json",
+    "id": "https://chc-datapoint.mybluemix.net/schema/chief/heart-rate-1.0.json",
     "description": "This schema represents a person's heart rate, either a single heart rate measurement, or the result of aggregating several measurements made over time (see Numeric descriptor schema for a list of aggregate measures)",
     "type": "object",
     "references": [
@@ -9,24 +9,16 @@
             "url": "http://purl.bioontology.org/ontology/SNOMEDCT/78564009"
         }
     ],
-    "definitions": {
-        "quantity_sample": {
-            "$ref": "chief-quantity-sample-1.0.json"
-        },
-        "quantity": {
-            "$ref": "quantity-1.0.json"
-        }
-    },
     "allOf": [
         {
-            "$ref": "#/definitions/quantity_sample"
+            "$ref": "chief-quantity-sample-1.0.json"
         },
         {
             "properties": {
                 "quantity": {
                     "allOf": [
                         {
-                            "$ref": "#/definitions/quantity"
+                            "$ref": "quantity-1.0.json"
                         },
                         {
                             "properties": {

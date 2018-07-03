@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "id": "http://datamanagement.mybluemix.net/schema/chief/hk-quantity-type-1.0.json",
+    "id": "https://chc-datapoint.mybluemix.net/schema/chief/hk-quantity-type-1.0.json",
     "type": "string",
     "description": "A quantity type identifier defined by the Apple HealthKit framework.",
     "references": [

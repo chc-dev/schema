@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "id": "http://datamanagement.mybluemix.net/schema/chief/quantity-length-1.0.json",
+    "id": "https://chc-datapoint.mybluemix.net/schema/chief/quantity-length-1.0.json",
     "description": "This schema represents a length or a distance.",
     "type": "object",
 

@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "id": "http://datamanagement.mybluemix.net/schema/chief/hk-category-type-1.0.json",
+    "id": "https://chc-datapoint.mybluemix.net/schema/chief/hk-category-type-1.0.json",
     "description": "The constants for category type data as defined by the Apple HealthKit framework.",
     "type": "string",
 

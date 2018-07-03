@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "id": "http://datamanagement.mybluemix.net/schema/chief/quantity-plane-angle-1.0.json",
+    "id": "https://chc-datapoint.mybluemix.net/schema/chief/quantity-plane-angle-1.0.json",
     "type": "object",
     "description": "This schema represents an angle on a plane.",
 

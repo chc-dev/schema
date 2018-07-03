@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "id": "http://datamanagement.mybluemix.net/schema/chief/quantity-1.0.json",
+    "id": "https://chc-datapoint.mybluemix.net/schema/chief/quantity-1.0.json",
     "description": "This schema represents a numerical value with a unit of measure.",
     "type": "object",
     "properties": {

@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "id": "http://datamanagement.mybluemix.net/schema/chief/blood-pressure-systolic-1.0.json",
+    "id": "https://chc-datapoint.mybluemix.net/schema/chief/blood-pressure-systolic-1.0.json",
     "type": "object",
     "description": "This schema represents a person's systolic blood pressure.",
     "references": [
@@ -9,24 +9,16 @@
             "url": "http://purl.bioontology.org/ontology/SNOMEDCT/271649006"
         }
     ],
-    "definitions": {
-        "quantity_sample": {
-            "$ref": "chief-quantity-sample-1.0.json"
-        },
-        "quantity": {
-            "$ref": "quantity-1.0.json"
-        }
-    },
     "allOf": [
         {
-            "$ref": "#/definitions/quantity_sample"
+            "$ref": "chief-quantity-sample-1.0.json"
         },
         {
             "properties": {
                 "quantity": {
                     "allOf": [
                         {
-                            "$ref": "#/definitions/quantity"
+                            "$ref": "quantity-1.0.json"
                         },
                         {
                             "properties": {

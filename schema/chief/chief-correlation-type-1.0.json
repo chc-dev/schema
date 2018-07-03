@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "id": "http://datamanagement.mybluemix.net/schema/chief/chief-correlation-type-1.0.json",
+    "id": "https://chc-datapoint.mybluemix.net/schema/chief/chief-correlation-type-1.0.json",
     "type": "string",
     "description": "The constants for the types of Correlation data as defined by Chief Cloud",
     "references": [

@@ -1,38 +1,112 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "id": "http://datamanagement.mybluemix.net/schema/chief/chief-workout-1.0.json",
+    "id": "https://chc-datapoint.mybluemix.net/schema/chief/chief-workout-1.0.json",
     "description": "A workout sample that represents a workout or episode of physical activity. This schema does not capture links created using the `addSamples` method of HKWorkout.",
     "type": "object",
-    "references": [
-        {
-            "description": "The class reference for Apple HealthKit HKWorkout.",
-            "url": "https://developer.apple.com/library/ios/documentation/HealthKit/Reference/HKWorkout_Class/index.html"
-        }
-    ],
     "definitions": {
-        "hk_activity_type": {
-            "$ref": "hk-workout-activity-type-1.0.json"
-        },
-        "chief_activity_type": {
-            "$ref": "chief-workout-activity-type-1.0.json"
-        },
-        "time_frame": {
-            "$ref": "time-frame-1.0.json"
-        },
-        "duration_unit_value": {
-            "$ref": "quantity-duration-1.0.json"
-        },
-        "energy_unit_value": {
-            "$ref": "quantity-energy-1.0.json"
-        },
-        "length_unit_value": {
-            "$ref": "quantity-length-1.0.json"
-        },
-        "chief_metadata_item": {
-            "$ref": "chief-metadata-item-1.0.json"
-        },
-        "hk_metadata_item": {
-            "$ref": "hk-metadata-item-1.0.json"
+        "statistics": {
+            "properties": {
+                "effective_time_frame": {
+                    "$ref": "time-frame-1.0.json"
+                },
+                "distance": {
+                    "description": "活動總距離 (單位: 公尺)",
+                    "type": "number"
+                },
+                "maxHeartbeats": {
+                    "description": "最高心率 (單位: bpm)",
+                    "type": "number"
+                },
+                "avgHeartbeats": {
+                    "description": "平均心率 (單位: bpm)",
+                    "type": "number"
+                },
+                "avgPressure": {
+                    "description": "平均氣壓 (單位: 百帕)",
+                    "type": "number"
+                },
+                "avgTemperature": {
+                    "description": "平均溫度 (單位: °C)",
+                    "type": "number"
+                },
+                "totalClimb": {
+                    "description": "活動總爬升高度 (單位: 公尺)",
+                    "type": "number"
+                },
+                "filterTotalDistance": {
+                    "description": "過濾後總距離 (單位: 公尺)",
+                    "type": "number"
+                },
+                "highStepCadence": {
+                    "description": "最高步頻 (單位: 步數/分鐘)",
+                    "type": "number"
+                },
+                "avgStepCadence": {
+                    "description": "平均步頻 (單位: 步數/分鐘)",
+                    "type": "number"
+                },
+                "maxPace": {
+                    "description": "最高步速 (單位: 分鐘/公里)",
+                    "type": "number"
+                },
+                "avgPace": {
+                    "description": "平均步速 (單位: 分鐘/公里)",
+                    "type": "number"
+                },
+                "maxElevation": {
+                    "description": "最高海拔 (單位: 公尺)",
+                    "type": "number"
+                },
+                "avgElevation": {
+                    "description": "平均海拔 (單位: 公尺)",
+                    "type": "number"
+                },
+                "avgBikeCadence": {
+                    "description": "平均腳踏車踏頻 (單位: 踩踏數/分鐘)",
+                    "type": "number"
+                },
+                "avgBikeSpeed": {
+                    "description": "平均腳踏車速度 (單位: 公里/小時)",
+                    "type": "number"
+                },
+                "maxSpeed": {
+                    "description": "最高速度 (單位: 公里/小時)",
+                    "type": "number"
+                },
+                "avgSpeed": {
+                    "description": "平均速度 (單位: 公里/小時)",
+                    "type": "number"
+                },
+                "swimStats": {
+                    "description": "游泳相關統計資料",
+                    "properties": {
+                        "avgSwolf": {
+                            "description": "平均 SWOLF",
+                            "type": "number"
+                        },
+                        "avgStrokeRate": {
+                            "description": "平均划手頻率 (單位: 次/分鐘)",
+                            "type": "number"
+                        },
+                        "maxStrokeRate": {
+                            "description": "最高划手頻率 (單位: 次/分鐘)",
+                            "type": "number"
+                        },
+                        "avgStrokeCount": {
+                            "description": "平均划手數 (單位: 次/趟)",
+                            "type": "number"
+                        },
+                        "strokeCount": {
+                            "description": "總划手數 (單位: 次)",
+                            "type": "number"
+                        },
+                        "swimStroke": {
+                            "description": "泳姿: 0:捷式 • 1:仰式 • 2:蛙式 • 3:蝶式",
+                            "type": "string"
+                        }
+                    }
+                }
+            }
         }
     },
     "properties": {
@@ -40,22 +114,22 @@
             "description": "This should correspond to the constant for the desired type of activity, e.g. cycling, not the integer value associated with that constant",
             "anyOf": [
                 {
-                    "$ref": "#/definitions/hk_activity_type"
+                    "$ref": "hk-workout-activity-type-1.0.json"
                 },
                 {
-                    "$ref": "#/definitions/chief_activity_type"
+                    "$ref": "chief-workout-activity-type-1.0.json"
                 }
             ]
         },
         "effective_time_frame": {
             "description": "The time frame when this sample occurred. When the HKSample `startDate` and `endDate` values are different, we recommend using the `time_interval` time frame property, and when they are the same, we recommend using the `date_time` time frame property.",
-            "$ref": "#/definitions/time_frame"
+            "$ref": "time-frame-1.0.json"
         },
         "duration": {
             "description": "The duration of the workout.",
             "allOf": [
                 {
-                    "$ref": "#/definitions/duration_unit_value"
+                    "$ref": "quantity-duration-1.0.json"
                 },
                 {
                     "properties": {
@@ -70,20 +144,20 @@
         },
         "energy_burned": {
             "description": "The number of calories burned in the workout.",
-            "$ref": "#/definitions/energy_unit_value"
+            "$ref": "quantity-energy-1.0.json"
         },
         "distance": {
             "description": "The distance covered, if applicable.",
-            "$ref": "#/definitions/length_unit_value"
+            "$ref": "quantity-length-1.0.json"
         },
         "metadata": {
             "type": "object",
             "allOf": [
                 {
-                    "$ref": "#/definitions/chief_metadata_item"
+                    "$ref": "chief-metadata-item-1.0.json"
                 },
                 {
-                    "$ref": "#/definitions/hk_metadata_item"
+                    "$ref": "hk-metadata-item-1.0.json"
                 },
                 {
                     "properties": {
@@ -95,156 +169,39 @@
                             }
                         },
                         "isRace": {
-                            "description": "?",
+                            "description": "是否為賽事 (true:是, false:否)",
                             "type": "boolean"
                         },
-                        "elevationCompleted": {
-                            "description": "?",
-                            "type": "number"
-                        },
-                        "elevationStatusCode": {
-                            "description": "?",
-                            "type": "number"
-                        },
-                        "location": {
-                            "description": "?",
+                        "competitionID": {
+                            "description": "賽事 ID",
                             "type": "string"
                         },
-                        "slope": {
-                            "description": "?",
-                            "type": "number"
+                        "elevationCompleted": {
+                            "description": "高度資訊是否已取得",
+                            "type": "boolean"
                         },
-                        "slopeWork": {
-                            "description": "?",
-                            "type": "number"
+                        "elevationStatusCode": {
+                            "description": "高度資訊狀態代碼",
+                            "type": "string"
                         },
-                        "stability": {
-                            "properties": {
-                                "METRIC": {
-                                    "description": "METRIC?",
-                                    "properties": {
-                                        "stabilityIndex": {
-                                            "description": "?",
-                                            "type": "number"
-                                        },
-                                        "avgStability": {
-                                            "description": "?",
-                                            "type": "number"
-                                        }
-                                    }
-                                }
-                            }
+                        "location": {
+                            "description": "活動所在地國碼 (例: TW)",
+                            "type": "string"
                         },
                         "lapStatsData": {
-                            "description": "?",
-                            "type": "array"
-                        },
-                        "comments": {
-                            "description": "?",
-                            "type": "array"
-                        },
-                        "stats": {
-                            "description": "統計資料?",
-                            "properties": {
-                                "duration": {
-                                    "description": "?",
-                                    "type": "number"
-                                },
-                                "distance": {
-                                    "description": "?",
-                                    "type": "number"
-                                },
-                                "maxHeartbeats": {
-                                    "description": "?",
-                                    "type": "number"
-                                },
-                                "avgHeartbeats": {
-                                    "description": "?",
-                                    "type": "number"
-                                },
-                                "avgPressure": {
-                                    "description": "?",
-                                    "type": "number"
-                                },
-                                "avgTemperature": {
-                                    "description": "?",
-                                    "type": "number"
-                                },
-                                "totalClimb": {
-                                    "description": "?",
-                                    "type": "number"
-                                },
-                                "filterTotalDistance": {
-                                    "description": "?",
-                                    "anyOf": [
-                                        {
-                                            "type": "string"
-                                        },
-                                        {
-                                            "type": "null"
-                                        }
-                                    ]
-                                },
-                                "highStepCadence": {
-                                    "description": "?",
-                                    "type": "number"
-                                },
-                                "avgStepCadence": {
-                                    "description": "?",
-                                    "type": "number"
-                                },
-                                "maxPace": {
-                                    "description": "?",
-                                    "type": "number"
-                                },
-                                "avgPace": {
-                                    "description": "?",
-                                    "type": "number"
-                                },
-                                "maxElevation": {
-                                    "description": "?",
-                                    "type": "number"
-                                },
-                                "avgElevation": {
-                                    "description": "?",
-                                    "type": "number"
-                                },
-                                "avgBikeCadence": {
-                                    "description": "?",
-                                    "type": "number"
-                                },
-                                "avgBikeSpeed": {
-                                    "description": "?",
-                                    "type": "number"
-                                },
-                                "maxSpeed": {
-                                    "description": "?",
-                                    "type": "number"
-                                },
-                                "avgSpeed": {
-                                    "description": "?",
-                                    "type": "number"
-                                },
-                                "swimStats": {
-                                    "description": "?",
-                                    "anyOf": [
-                                        {
-                                            "type": "string"
-                                        },
-                                        {
-                                            "type": "null"
-                                        }
-                                    ]
-                                }
+                            "description": "圈數資料",
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/statistics"
                             }
                         },
-                        "visibility": {
-                            "description": "?",
-                            "type": "number"
+                        "comments": {
+                            "description": "註解",
+                            "type": "string"
                         },
-                        "typeID": {
-                            "description": "?",
-                            "type": "number"
+                        "stats": {
+                            "description": "活動統計資料",
+                            "$ref": "#/definitions/statistics"
                         }
                     }
                 }

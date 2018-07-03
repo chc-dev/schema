@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "id": "http://datamanagement.mybluemix.net/schema/chief/part-of-day-1.0.json",
+    "id": "https://chc-datapoint.mybluemix.net/schema/chief/part-of-day-1.0.json",
     "description": "The period of time in which a day is commonly divided.",
     "type": "string",
     "references": [

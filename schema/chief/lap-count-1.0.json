@@ -1,30 +1,16 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "id": "http://datamanagement.mybluemix.net/schema/chief/lap-count-1.0.json",
+    "id": "https://chc-datapoint.mybluemix.net/schema/chief/lap-count-1.0.json",
     "description": "This schema represents number of steps.",
     "type": "object",
-    "references": [
-        {
-            "description": "The LOINC code refers to Number of steps in unspecified time Pedometer",
-            "url": "http://purl.bioontology.org/ontology/LNC/55423-8"
-        }
-    ],
-    "definitions": {
-        "quantity_sample": {
-            "$ref": "chief-quantity-sample-1.0.json"
-        },
-        "quantity": {
-            "$ref": "quantity-1.0.json"
-        }
-    },
     "allOf": [
         {
-            "$ref": "#/definitions/quantity_sample"
+            "$ref": "chief-quantity-sample-1.0.json"
         },
         {
             "properties": {
                 "quantity": {
-                    "$ref": "#/definitions/quantity"
+                    "$ref": "quantity-1.0.json"
                 },
                 "quantity_type": {
                     "enum": [

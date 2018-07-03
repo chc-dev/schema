@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "id": "http://datamanagement.mybluemix.net/schema/chief/hk-metadata-item-1.0.json",
+    "id": "https://chc-datapoint.mybluemix.net/schema/chief/hk-metadata-item-1.0.json",
     "type": "object",
     "description": "An key-value pair that represent Apple HealthKit metadata information.",
     "references": [

@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "id": "http://datamanagement.mybluemix.net/schema/chief/oxygen-saturation-1.0.json",
+    "id": "https://chc-datapoint.mybluemix.net/schema/chief/oxygen-saturation-1.0.json",
     "description": "This schema represents the oxygen saturation.",
     "type": "object",
     "references": [
@@ -9,24 +9,16 @@
             "url": "http://purl.bioontology.org/ontology/SNOMEDCT/431314004"
         }
     ],
-    "definitions": {
-        "quantity_sample": {
-            "$ref": "chief-quantity-sample-1.0.json"
-        },
-        "quantity": {
-            "$ref": "quantity-1.0.json"
-        }
-    },
     "allOf": [
         {
-            "$ref": "#/definitions/quantity_sample"
+            "$ref": "chief-quantity-sample-1.0.json"
         },
         {
             "properties": {
                 "quantity": {
                     "allOf": [
                         {
-                            "$ref": "#/definitions/quantity"
+                            "$ref": "quantity-1.0.json"
                         },
                         {
                             "properties": {

@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "id": "http://datamanagement.mybluemix.net/schema/chief/hk-workout-activity-type-1.0.json",
+    "id": "https://chc-datapoint.mybluemix.net/schema/chief/hk-workout-activity-type-1.0.json",
     "description": "The name(s) of the physical activity(ies) in which the person is engaged. It is recommended that the activity name be drawn from the CDC guidelines to facilitate mapping to standard energy expenditure values (METs)",
     "references": [
         {

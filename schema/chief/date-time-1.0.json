@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "id": "http://datamanagement.mybluemix.net/schema/chief/date-time-1.0.json", 
+    "id": "https://chc-datapoint.mybluemix.net/schema/chief/date-time-1.0.json", 
     "description": "This schema represents a point in time (ISO8601). If a timezone is not included, the timezone is assumed to be UTC.", 
     "type": "string",
     "references": [

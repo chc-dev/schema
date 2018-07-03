@@ -1,25 +1,8 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "id": "http://datamanagement.mybluemix.net/schema/chief/geoposition-1.0.json",
+    "id": "https://chc-datapoint.mybluemix.net/schema/chief/geoposition-1.0.json",
     "description": "This schema represents a geographic position measurement.",
     "type": "object",
-    "definitions": {
-        "plane_angle_unit_value": {
-            "$ref": "quantity-plane-angle-1.0.json"
-        },
-        "length_unit_value": {
-            "$ref": "quantity-length-1.0.json"
-        },
-        "time_frame": {
-            "$ref": "time-frame-1.0.json"
-        },
-        "chief_metadata_item": {
-            "$ref": "chief-metadata-item-1.0.json"
-        },
-        "hk_metadata_item": {
-            "$ref": "hk-metadata-item-1.0.json"
-        }
-    },
     "properties": {
         "x": {
             "description": "Longitude, the angular distance of a place east or west of the meridian at Greenwich, England, expressed in degrees.",
@@ -29,7 +12,7 @@
                     "url": "https://ncim.nci.nih.gov/ncimbrowser/ConceptReport.jsp?dictionary=NCI%20MetaThesaurus&code=C1657623"
                 }
             ],
-            "$ref": "#/definitions/plane_angle_unit_value"
+            "$ref": "quantity-plane-angle-1.0.json"
         },
         "y": {
             "description": "Latitude, the angular distance of a place north or south of the earth's equator expressed in degrees.",
@@ -39,7 +22,7 @@
                     "url": "https://ncim.nci.nih.gov/ncimbrowser/ConceptReport.jsp?dictionary=NCI%20MetaThesaurus&code=C1627936"
                 }
             ],
-            "$ref": "#/definitions/plane_angle_unit_value"
+            "$ref": "quantity-plane-angle-1.0.json"
         },
         "z": {
             "description": "Elevation, the height above or below a fixed reference point, most commonly a reference geoid, a mathematical model of the Earth's sea level as an equipotential gravitational surface.",
@@ -51,7 +34,7 @@
             ],
             "allOf": [
                 {
-                    "$ref": "#/definitions/length_unit_value"
+                    "$ref": "quantity-length-1.0.json"
                 },
                 {
                     "properties": {
@@ -76,7 +59,7 @@
             "description": "A geoposition should be associated to a date time time frame.",
             "allOf": [
                 {
-                    "$ref": "#/definitions/time_frame"
+                    "$ref": "time-frame-1.0.json"
                 },
                 {
                     "required": [
@@ -139,10 +122,10 @@
             "type": "object",
             "allOf": [
                 {
-                    "$ref": "#/definitions/chief_metadata_item"
+                    "$ref": "chief-metadata-item-1.0.json"
                 },
                 {
-                    "$ref": "#/definitions/hk_metadata_item"
+                    "$ref": "hk-metadata-item-1.0.json"
                 }
             ]
         }

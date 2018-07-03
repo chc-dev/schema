@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "id": "http://datamanagement.mybluemix.net/schema/chief/body-mass-1.0.json",
+    "id": "https://chc-datapoint.mybluemix.net/schema/chief/body-mass-1.0.json",
     "description": "This schema represents a person's body weight, either a single body weight measurement, or for the result of aggregating several measurements made over time (see Numeric descriptor schema for a list of aggregate measures)",
     "type": "object",
     "references": [
@@ -9,22 +9,14 @@
             "url": "http://purl.bioontology.org/ontology/SNOMEDCT/363808001"
         }
     ],
-    "definitions": {
-        "quantity_sample": {
-            "$ref": "chief-quantity-sample-1.0.json"
-        },
-        "mass_unit_value": {
-            "$ref": "quantity-mass-1.0.json"
-        }
-    },
     "allOf": [
         {
-            "$ref": "#/definitions/quantity_sample"
+            "$ref": "chief-quantity-sample-1.0.json"
         },
         {
             "properties": {
                 "quantity": {
-                    "$ref": "#/definitions/mass_unit_value"
+                    "$ref": "quantity-mass-1.0.json"
                 },
                 "quantity_type": {
                     "type": "string",

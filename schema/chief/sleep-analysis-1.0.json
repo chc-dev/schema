@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "id": "http://datamanagement.mybluemix.net/schema/chief/sleep-analysis-1.0.json",
+    "id": "https://chc-datapoint.mybluemix.net/schema/chief/sleep-analysis-1.0.json",
     "type": "object",
     "description": "This schema represents sleep duration.",
     "references": [
@@ -13,20 +13,9 @@
             "url": "https://developer.apple.com/documentation/healthkit/hkcategoryvaluesleepanalysis"
         }
     ],
-    "definitions": {
-        "category_sample": {
-            "$ref": "chief-category-sample-1.0.json"
-        },
-        "chief_metadata_item": {
-            "$ref": "chief-metadata-item-1.0.json"
-        },
-        "hk_metadata_item": {
-            "$ref": "hk-metadata-item-1.0.json"
-        }
-    },
     "allOf": [
         {
-            "$ref": "#/definitions/category_sample"
+            "$ref": "chief-category-sample-1.0.json"
         },
         {
             "properties": {
@@ -46,10 +35,10 @@
                     "type": "object",
                     "allOf": [
                         {
-                            "$ref": "#/definitions/chief_metadata_item"
+                            "$ref": "chief-metadata-item-1.0.json"
                         },
                         {
-                            "$ref": "#/definitions/hk_metadata_item"
+                            "$ref": "hk-metadata-item-1.0.json"
                         },
                         {
                             "properties": {
